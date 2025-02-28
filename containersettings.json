@@ -1,0 +1,32 @@
+{
+  "ContainerSettings": {
+    "UpstreamConnectionName": "UpstreamAPI", // The connection name for the UpstreamUrl the the HttpClientFactory uses.
+    "RewriteLimit": 2097152, // Max size of a buffered request stream in case we need to re-write. If a payload is larger than this is is written to a temp folder.
+    "CorsHeaders": [
+      "x-mte-relay",
+      "x-mte-relay-eh",
+      "content-type"
+    ],
+    "SpecialProxyHeaders": [
+      "accept-encoding",
+      "cache-control",
+      "pragma"
+    ],
+    "HeadersToIgnore": [ // A list of headers that the framework supplies and we do NOT copy to the upstream request.
+      "connection",
+      "keep-alive",
+      "proxy-authenticate",
+      "proxy-authorization",
+      "te",
+      "trailer",
+      "transfer-encoding",
+      "upgrade",
+      "content-length",
+      "host",
+      "date",
+      "server",
+      "via",
+      "expect"
+    ]
+  }
+}
